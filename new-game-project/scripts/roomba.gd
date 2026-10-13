@@ -6,11 +6,19 @@ extends CharacterBody2D
 const SPEED = 300.0
 var roomba_facing := "Right"
 #const JUMP_VELOCITY = -400.0
+var score : int = 0
 
 #camera
 var zoom_min = Vector2(1.1, 1.1)
 var zoom_max = Vector2(1.15, 1.5)
 var zoom_speed = Vector2(0.0030,0.0030)
+
+#signal
+signal UI_score_display(score_val : int)
+
+func _ready() -> void:
+	add_to_group("roomba")
+	connect_to_UI()
 
 func _physics_process(delta: float) -> void:
 	var roomba_direction := Input.get_axis("Left", "Right")
@@ -48,3 +56,13 @@ func _physics_process(delta: float) -> void:
 		if camera_2d.zoom < zoom_max:
 			camera_2d.zoom += zoom_speed
 			
+
+func add_score(amount: int) -> void:
+	score += amount
+	UI_score_display.emit(score)
+	print("Score: ", score)
+
+func connect_to_UI() -> void:
+	var UI = get_tree().get_first_node_in_group("UI")
+	if UI:
+		UI_score_display.connect(UI._display_score)

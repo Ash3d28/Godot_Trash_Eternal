@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpbq88dme6d6m" path="res://scenes/Stage/ground.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c201kqm66rjry" path="res://scenes/pause_menu.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://lbbvjxnebsga" path="res://scenes/game_over.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://djf7keuxeyyoh" path="res://scenes/ui.tscn" id="5_iywne"]
 
 [node name="Game" type="Node2D" unique_id=812271920]
 script = ExtResource("1_yqjtg")
@@ -16,4 +17,9 @@ metadata/_edit_horizontal_guides_ = [-596.0]
 [node name="game_over" parent="." unique_id=676856134 instance=ExtResource("4_lbhrr")]
 visible = false
 
+[node name="UI" parent="." unique_id=2108810403 instance=ExtResource("5_iywne")]
+
+[connection signal="brand_new_day" from="Ground" to="UI" method="_on_ground_brand_new_day"]
 [connection signal="game_over" from="Ground" to="game_over" method="_on_ground_game_over"]
+[connection signal="game_over" from="Ground" to="UI" method="_on_ground_game_over"]
+[connection signal="send_final_score" from="UI" to="game_over" method="_on_ui_send_final_score"]

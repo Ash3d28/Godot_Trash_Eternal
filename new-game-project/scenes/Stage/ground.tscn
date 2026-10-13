@@ -457,39 +457,140 @@ physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_j4yi7")
 sources/1 = SubResource("TileSetAtlasSource_vehv0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oy7d"]
-texture = ExtResource("8_e223d")
-0:0/size_in_atlas = Vector2i(2, 2)
-0:0/animation_columns = 4
-0:0/animation_frame_0/duration = 0.2
-0:0/animation_frame_1/duration = 0.2
-0:0/animation_frame_2/duration = 0.2
-0:0/animation_frame_3/duration = 0.2
-0:0/0 = 0
-0:2/size_in_atlas = Vector2i(2, 2)
-0:2/animation_columns = 4
-0:2/animation_frame_0/duration = 0.2
-0:2/animation_frame_1/duration = 0.2
-0:2/animation_frame_2/duration = 0.2
-0:2/animation_frame_3/duration = 0.2
-0:2/0 = 0
-0:4/size_in_atlas = Vector2i(2, 2)
-0:4/animation_columns = 4
-0:4/animation_frame_0/duration = 0.2
-0:4/animation_frame_1/duration = 0.2
-0:4/animation_frame_2/duration = 0.2
-0:4/animation_frame_3/duration = 0.2
-0:4/0 = 0
-0:6/size_in_atlas = Vector2i(2, 2)
-0:6/animation_columns = 4
-0:6/animation_frame_0/duration = 0.2
-0:6/animation_frame_1/duration = 0.2
-0:6/animation_frame_2/duration = 0.2
-0:6/animation_frame_3/duration = 0.2
-0:6/0 = 0
+[sub_resource type="AtlasTexture" id="AtlasTexture_e223d"]
+atlas = ExtResource("8_e223d")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="TileSet" id="TileSet_7fed3"]
-sources/6 = SubResource("TileSetAtlasSource_8oy7d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_betfj"]
+atlas = ExtResource("8_e223d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oy7d"]
+atlas = ExtResource("8_e223d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fw2u"]
+atlas = ExtResource("8_e223d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3d4b"]
+atlas = ExtResource("8_e223d")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5dcs"]
+atlas = ExtResource("8_e223d")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exu16"]
+atlas = ExtResource("8_e223d")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j55re"]
+atlas = ExtResource("8_e223d")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc6e7"]
+atlas = ExtResource("8_e223d")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x1ki"]
+atlas = ExtResource("8_e223d")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkkox"]
+atlas = ExtResource("8_e223d")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b62q0"]
+atlas = ExtResource("8_e223d")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h1a1"]
+atlas = ExtResource("8_e223d")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlvak"]
+atlas = ExtResource("8_e223d")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rycth"]
+atlas = ExtResource("8_e223d")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_885re"]
+atlas = ExtResource("8_e223d")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qii31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e223d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_betfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oy7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fw2u")
+}],
+"loop": 1,
+"name": &"State1",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3d4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5dcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exu16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j55re")
+}],
+"loop": 1,
+"name": &"State2",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc6e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x1ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkkox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b62q0")
+}],
+"loop": 1,
+"name": &"State3",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h1a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlvak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rycth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_885re")
+}],
+"loop": 1,
+"name": &"State4",
+"speed": 9.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wljyq"]
 texture = ExtResource("8_wljyq")
@@ -752,32 +853,32 @@ tile_set = SubResource("TileSet_qxq6i")
 
 [node name="Props" type="Node2D" parent="." unique_id=567020327]
 
-[node name="Sewage" type="Node2D" parent="Props" unique_id=210217091]
-
-[node name="Sewage" type="TileMapLayer" parent="Props/Sewage" unique_id=1582473956]
+[node name="Sewage" type="AnimatedSprite2D" parent="Props" unique_id=1028928491]
 texture_filter = 1
-position = Vector2(1.81, 23.925)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAKAA0ABgAAAAAAAAANAA0ABgAAAAIAAAARAA0ABgAAAAQAAAAUAA0ABgAAAAYAAAA=")
-tile_set = SubResource("TileSet_7fed3")
+position = Vector2(619, 672)
+scale = Vector2(4, 3)
+sprite_frames = SubResource("SpriteFrames_qii31")
+animation = &"State1"
+autoplay = "State1"
+frame_progress = 0.38136715
 
-[node name="Sewage2" type="TileMapLayer" parent="Props/Sewage" unique_id=1081480652]
+[node name="Sewage2" type="AnimatedSprite2D" parent="Props" unique_id=2125701559]
 texture_filter = 1
-position = Vector2(14.375, 24.02)
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_7fed3")
+position = Vector2(2427, 672)
+scale = Vector2(4, 3)
+sprite_frames = SubResource("SpriteFrames_qii31")
+animation = &"State1"
+autoplay = "State1"
+frame_progress = 0.266231
 
-[node name="Sewage3" type="TileMapLayer" parent="Props/Sewage" unique_id=1654271615]
+[node name="Sewage3" type="AnimatedSprite2D" parent="Props" unique_id=256234443]
 texture_filter = 1
-position = Vector2(0, 23.92)
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_7fed3")
-
-[node name="Sewage4" type="TileMapLayer" parent="Props/Sewage" unique_id=289694318]
-texture_filter = 1
-position = Vector2(13.34, 24.015)
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_7fed3")
+position = Vector2(-893, 672)
+scale = Vector2(4, 3)
+sprite_frames = SubResource("SpriteFrames_qii31")
+animation = &"State1"
+autoplay = "State1"
+frame_progress = 0.99333555
 
 [node name="Fences" type="TileMapLayer" parent="Props" unique_id=892590856]
 texture_filter = 1

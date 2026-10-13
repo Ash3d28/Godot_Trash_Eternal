@@ -1,10 +1,11 @@
 extends Node2D
+@onready var ui: CanvasLayer = $UI
+
 var timer:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,3 +16,6 @@ func _process(delta: float) -> void:
 #Signals
 func _on_roomba_touched() -> void:
 	print("roomba touched")
+	
+func _brand_new_day(day : int):
+	ui.Days

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lbbvjxnebsga"]
 
 [ext_resource type="Script" uid="uid://b16vhyksn5yy0" path="res://scripts/game_over.gd" id="1_racf3"]
+[ext_resource type="FontFile" uid="uid://cm4q18t3f8fcy" path="res://Assets/Fonts/HikariByte.ttf" id="3_tbwuq"]
 [ext_resource type="Texture2D" uid="uid://bpwasn2lwrasi" path="res://Assets/Images/Game Over/game_over_menu.png" id="4_irg28"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_racf3"]
@@ -107,5 +108,18 @@ offset_left = -24.0
 offset_top = -25.0
 offset_right = 942.0
 offset_bottom = 667.0
+
+[node name="Final_Score" type="Label" parent="." unique_id=647032758]
+texture_filter = 1
+offset_left = 158.0
+offset_top = 456.0
+offset_right = 791.0
+offset_bottom = 528.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_tbwuq")
+theme_override_font_sizes/font_size = 88
+text = "Test"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

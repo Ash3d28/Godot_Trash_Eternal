@@ -20,10 +20,12 @@ var is_pile := false
 
 signal trash_detected(trash: Area2D, if_full: bool)
 signal trash_dmg(damage)
+signal give_score(score : int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("trash")
+	connect_to_roomba()
 	var max_hp = hp
 	if health:
 		health.max_value = max_hp
@@ -87,6 +89,7 @@ func roomba_touched():
 		await get_tree().create_timer(0.5).timeout
 	if hp == 0:
 		trash.queue_free()
+		give_score.emit(100)
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	print(body.name)
@@ -115,3 +118,8 @@ func become_pile() -> void:
 	if is_pile:
 		return
 	is_pile = true
+
+func connect_to_roomba():
+	var roomba = get_tree().get_first_node_in_group("roomba")
+	if roomba:
+		give_score.connect(roomba.add_score)

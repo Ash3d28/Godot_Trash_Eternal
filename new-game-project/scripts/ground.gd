@@ -4,13 +4,16 @@ extends Node2D
 @onready var bg2: Node2D = $Backgrounds/Game_Background_2
 @onready var bg3: Node2D = $Backgrounds/Game_Background_3
 @onready var bg4: Node2D = $Backgrounds/Game_Background_4
+@onready var sg1: AnimatedSprite2D = $Props/Sewage
+@onready var sg2: AnimatedSprite2D = $Props/Sewage2
+@onready var sg3: AnimatedSprite2D = $Props/Sewage3
 
 var timer
 
 #days(not implemented yet)
 var day : int
 var day_timer := 0.0
-var day_interval := 10
+var day_interval := 30
 
 #Ground
 var ground_hp = 500
@@ -19,6 +22,7 @@ var dmg_interval := 3.0
 
 #Signals
 signal game_over
+signal brand_new_day(day_number : int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +35,7 @@ func _process(delta: float) -> void:
 	new_day(delta)
 		
 func new_game():
-	day = 0
+	day = 1
 	
 func take_damage(sec_past : float, trash_group : String) -> void:
 	dmg_timer += sec_past
@@ -52,25 +56,38 @@ func new_day(sec_past : float) -> void:
 	if day_timer >= day_interval:
 		day_timer -= day_interval
 		day += 1
+		brand_new_day.emit(day)
 		print("Day: ",day)
 	if ground_hp >= 400:
 		bg1.visible = true
 		bg2.visible = false
 		bg3.visible = false
 		bg4.visible = false
+		sg1.play("State1")
+		sg2.play("State1")
+		sg3.play("State1")
 	elif ground_hp >= 300 and ground_hp <= 399:
 		bg1.visible = false
 		bg2.visible = true
 		bg3.visible = false
 		bg4.visible = false
+		sg1.play("State2")
+		sg2.play("State2")
+		sg3.play("State2")
 	elif ground_hp >= 200 and ground_hp <= 299:
 		bg1.visible = false
 		bg2.visible = false
 		bg3.visible = true
 		bg4.visible = false
+		sg1.play("State3")
+		sg2.play("State3")
+		sg3.play("State3")
 	elif ground_hp >= 100 and ground_hp <= 199:
 		bg1.visible = false
 		bg2.visible = false
 		bg3.visible = false
 		bg4.visible = true
+		sg1.play("State4")
+		sg2.play("State4")
+		sg3.play("State4")
 		

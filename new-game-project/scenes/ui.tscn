@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://djf7keuxeyyoh"]
+
+[ext_resource type="FontFile" uid="uid://cm4q18t3f8fcy" path="res://Assets/Fonts/HikariByte.ttf" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://be25ljohrxyxt" path="res://scripts/ui.gd" id="1_m6e0p"]
+
+[node name="UI" type="CanvasLayer" unique_id=2108810403]
+script = ExtResource("1_m6e0p")
+
+[node name="Days" type="Label" parent="." unique_id=11844063]
+texture_filter = 1
+offset_left = 131.0
+offset_top = 59.0
+offset_right = 317.0
+offset_bottom = 149.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.6117647)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_font_sizes/font_size = 76
+text = "Day: 0"
+
+[node name="Score" type="Label" parent="." unique_id=500599072]
+texture_filter = 1
+offset_left = 459.0
+offset_top = 56.0
+offset_right = 1127.0
+offset_bottom = 120.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.57254905)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_font_sizes/font_size = 76
+text = "Score: "
