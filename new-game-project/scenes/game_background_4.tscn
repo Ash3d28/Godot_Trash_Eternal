@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dvj4mtdsubo3o"]
+
+[ext_resource type="Texture2D" uid="uid://cbacw5def3okl" path="res://Assets/Images/Background/Enviro Bg/576x324 gameplay_bg_state4_pack.png" id="1_wc2lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1qq6"]
+atlas = ExtResource("1_wc2lk")
+region = Rect2(0, 0, 576, 322)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sh8j"]
+atlas = ExtResource("1_wc2lk")
+region = Rect2(0, 324, 576, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bajw"]
+atlas = ExtResource("1_wc2lk")
+region = Rect2(0, 563, 576, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo1uw"]
+atlas = ExtResource("1_wc2lk")
+region = Rect2(0, 976, 576, 318)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw4le"]
+atlas = ExtResource("1_wc2lk")
+region = Rect2(0, 1311, 576, 319)
+
+[node name="Game_Background_4" type="Node2D" unique_id=658863321]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1450885728]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1167.56, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1457621923]
+texture_filter = 1
+position = Vector2(582.766, 324)
+scale = Vector2(2.0269651, 1.9938271)
+texture = SubResource("AtlasTexture_l1qq6")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1824343021]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(1167.56, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=178437525]
+texture_filter = 1
+position = Vector2(582.766, 324)
+scale = Vector2(2.0269651, 1.9938271)
+texture = SubResource("AtlasTexture_3sh8j")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=2142672931]
+scroll_scale = Vector2(5, 5)
+repeat_size = Vector2(1167.56, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=90436669]
+texture_filter = 1
+position = Vector2(582.766, 324)
+scale = Vector2(2.0269651, 1.9938271)
+texture = SubResource("AtlasTexture_2bajw")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=470332005]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1167.56, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=617547555]
+texture_filter = 1
+position = Vector2(582.766, 324)
+scale = Vector2(2.0269651, 1.9938271)
+texture = SubResource("AtlasTexture_uo1uw")
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=1693716366]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1167.56, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=613278385]
+texture_filter = 1
+position = Vector2(582.766, 324)
+scale = Vector2(2.0269651, 1.9938271)
+texture = SubResource("AtlasTexture_qw4le")

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://lbbvjxnebsga"]
+
+[ext_resource type="Script" uid="uid://b16vhyksn5yy0" path="res://scripts/game_over.gd" id="1_racf3"]
+[ext_resource type="Texture2D" uid="uid://bpwasn2lwrasi" path="res://Assets/Images/Game Over/game_over_menu.png" id="4_irg28"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_racf3"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 0, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m3ot"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 190, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3hpu"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 380, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irg28"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 570, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jtsn"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 760, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bugq"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 950, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wawo4"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 1140, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56v3a"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 1330, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o57t2"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 1520, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq3qu"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 1900, 280, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p6qk"]
+atlas = ExtResource("4_irg28")
+region = Rect2(0, 2090, 280, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qc6lc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_racf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m3ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3hpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irg28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jtsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bugq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wawo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56v3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o57t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq3qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p6qk")
+}],
+"loop": 0,
+"name": &"game_over",
+"speed": 4.0
+}]
+
+[node name="game_over" type="CanvasLayer" unique_id=676856134]
+process_mode = 3
+script = ExtResource("1_racf3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=571104424]
+texture_filter = 1
+position = Vector2(462, 320)
+scale = Vector2(3.4904554, 3.4904554)
+sprite_frames = SubResource("SpriteFrames_qc6lc")
+animation = &"game_over"
+frame = 10
+frame_progress = 1.0
+
+[node name="Quit" type="Button" parent="." unique_id=2125063704]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -25.0
+offset_right = 942.0
+offset_bottom = 667.0
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

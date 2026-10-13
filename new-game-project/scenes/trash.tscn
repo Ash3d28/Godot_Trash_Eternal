@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://cjahwre1kv70c"]
+
+[ext_resource type="Script" uid="uid://r7fgkvst3urr" path="res://scripts/trash.gd" id="1_24v10"]
+[ext_resource type="Texture2D" uid="uid://frfbqbv46fan" path="res://Assets/Images/Trash/trash_pile_base_variant.png" id="2_exrr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxq6i"]
+size = Vector2(49, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exrr5"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(0, 0, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cq4d"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(0, 67, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6jqc"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(96, 67, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24v10"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(192, 67, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g7r5"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(0, 134, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sf1q"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(96, 134, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3mh6"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(192, 134, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q2p5"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(0, 201, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kick1"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(96, 201, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q42go"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(192, 201, 96, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0or2d"]
+atlas = ExtResource("2_exrr5")
+region = Rect2(288, 201, 96, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qii31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exrr5")
+}],
+"loop": 1,
+"name": &"lvl1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cq4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6jqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24v10")
+}],
+"loop": 1,
+"name": &"lvl2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g7r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sf1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3mh6")
+}],
+"loop": 1,
+"name": &"lvl3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q2p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kick1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q42go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0or2d")
+}],
+"loop": 1,
+"name": &"lvl4",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3mh6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0q2p5"]
+bg_color = Color(0.80827314, 0.09090651, 9.62615e-08, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc6lc"]
+size = Vector2(202.5, 20)
+
+[node name="Trash" type="Area2D" unique_id=1701510807 node_paths=PackedStringArray("health", "nearby_trash")]
+z_index = 1
+script = ExtResource("1_24v10")
+health = NodePath("Health")
+nearby_trash = NodePath("Nearby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1232760601]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_qxq6i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1354047881]
+texture_filter = 1
+position = Vector2(-6.7762636e-21, -20)
+scale = Vector2(1.1889648, 1.0289118)
+sprite_frames = SubResource("SpriteFrames_qii31")
+animation = &"lvl4"
+autoplay = "lvl1"
+
+[node name="Health" type="ProgressBar" parent="." unique_id=2145078454]
+texture_filter = 2
+offset_left = -29.000002
+offset_top = -38.0
+offset_right = 86.0
+offset_bottom = -11.0
+scale = Vector2(0.4997263, 0.25058308)
+theme_override_styles/background = SubResource("StyleBoxFlat_r3mh6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0q2p5")
+max_value = 10.0
+step = 1.0
+value = 10.0
+rounded = true
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Nearby" type="Area2D" parent="." unique_id=341576640]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nearby" unique_id=2063001186]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_qc6lc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="area_entered" from="Nearby" to="." method="_on_nearby_area_entered"]

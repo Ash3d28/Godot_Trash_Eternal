@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://155xx7s6y6ta"]
+
+[ext_resource type="Script" uid="uid://d3hwsuwgv87yp" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://gwlwmgh0ch73" path="res://Assets/Images/Background/Menu BG/280x190 main_menu_bg[new].png" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://c60ggdvo8rm6b" path="res://Assets/Images/Buttons/play_button.png" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://5axjesr8t1i8" path="res://Assets/Images/Buttons/exit_button.png" id="4_jyhfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc6lc"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(21.923393, 28.906742, 55.797417, 32.381733)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fed3"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(222.01828, 25.810513, 55.896698, 35.335384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh60o"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(122.7733, 28.801685, 55.293396, 32.41773)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wfyh"]
+atlas = ExtResource("4_jyhfs")
+region = Rect2(22.153315, 39.04684, 55.600792, 30.060253)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sugp2"]
+atlas = ExtResource("4_jyhfs")
+region = Rect2(221.58543, 38.857754, 56.489624, 30.574589)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhfs"]
+atlas = ExtResource("4_jyhfs")
+region = Rect2(122.027954, 38.95185, 55.695984, 30.666328)
+
+[node name="Main" type="Node2D" unique_id=607984859]
+position = Vector2(-116.00001, 0)
+scale = Vector2(1.0113748, 1.0113748)
+script = ExtResource("1_o5qli")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2007565467]
+texture_filter = 1
+offset_right = 1150.0
+offset_bottom = 645.0
+texture = ExtResource("2_jyhfs")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="." unique_id=2076952591]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 273.0
+offset_bottom = 186.0
+
+[node name="Play" type="TextureButton" parent="Control" unique_id=1214801560]
+texture_filter = 1
+layout_mode = 0
+offset_left = 749.0
+offset_top = 230.0
+offset_right = 946.1428
+offset_bottom = 322.0
+texture_normal = SubResource("AtlasTexture_qc6lc")
+texture_pressed = SubResource("AtlasTexture_7fed3")
+texture_hover = SubResource("AtlasTexture_yh60o")
+stretch_mode = 0
+
+[node name="Quit" type="TextureButton" parent="Control" unique_id=1440286352]
+texture_filter = 1
+layout_mode = 0
+offset_left = 750.0
+offset_top = 354.0
+offset_right = 945.6206
+offset_bottom = 447.0
+texture_normal = SubResource("AtlasTexture_0wfyh")
+texture_pressed = SubResource("AtlasTexture_sugp2")
+texture_hover = SubResource("AtlasTexture_jyhfs")
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]
